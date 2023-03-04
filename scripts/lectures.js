@@ -14,7 +14,7 @@ globalThis.l = console.log;
 
 
 // setTimeout(()=>{  HH1.removeEventListener('mouseenter', wolfArrow1)}, 5000)
-
+l('wolf')
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 let lectures = 'lectures';
