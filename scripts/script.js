@@ -8,7 +8,7 @@ import { lectures } from "./lectures.js";
 import { script2 } from "./script2.js";
  
 
-document.body.style="background:darkblue"
+document.body.style="background:black"
 
 ///////////////////////////////////////
 // Modal window
