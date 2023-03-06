@@ -96,3 +96,110 @@ export let script2 = 'script2';
 
 
 // //////////////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////////////////
+// let testState = true;
+
+let  span = document.querySelector('.wolfgang');
+ 
+let  HH1 = document.querySelector('h1');
+
+const wolfArrow1 = (param1) => {
+   l(param1.target)
+
+
+ //HH1.removeEventListener('mouseenter', wolfArrow1);
+};
+
+HH1.addEventListener('mouseenter', wolfArrow1);
+span.addEventListener('mouseenter', wolfArrow1);
+
+
+// setTimeout(()=>{  HH1.removeEventListener('mouseenter', wolfArrow1)}, 5000)
+
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////////////////
+let temp = 0
+let randomRum = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+let randomColor = () =>
+  ` rgb(${randomRum(0, 255)}, ${randomRum(0, 255)}, ${randomRum(0, 255)})`;
+//  /////////////////////////////////////////////////////////////////////////////////////////
+// document.querySelector('.nav__link').addEventListener('click', function (e) {
+//   l('link', e.target, e.currentTarget);
+//   e.currentTarget.style.backgroundColor = randomColor();
+//   ++temp
+  
+//  //e.stopPropagation();
+// }, );
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//     this.style.backgroundColor = randomColor();
+//     e.target.style.backgroundColor = randomColor();
+//   ++temp
+//   l('link', e.target, e.currentTarget);
+//   //e.stopPropagation();
+// }, {once: false});
+// /////////////////////////////////////////////////////////////////////////////////////////
+// // document.querySelector('.nav__links').addEventListener('click', function (e) {
+// //     ++temp
+// //     l(`'wolfgang'${temp}`);
+// // }, true);
+// /////////////////////////////////////////////////////////////////////////////////////////
+// document.querySelector('.nav').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randomColor();
+//   ++temp
+//   l('link', e.target, e.currentTarget);
+//    //e.stopPropagation();
+// },);
+// /////////////////////////////////////////////////////////////////////////////////////////
+// document.querySelector('body').addEventListener('click', function (e) {
+//     e.target.style.border =`2px dotted ${randomColor()}`;
+// l(e.target)
+//   ++temp
+//   //l('body', e.target, e.currentTarget);
+//    //e.stopPropagation();
+// },);
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+'use strict';
+// /////////////////////////////////////////////////////////////////////////////////////////
+
+globalThis.l = console.log;
+globalThis.aGEL = function (type, selector, callback) {
+    document.addEventListener(type, (e) => {
+      if (e.target.matches(selector)) callback(e, selector);
+    });
+  }
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+
+let temp = 0;
+let randomRum = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+let randomColor = () =>
+  ` rgb(${randomRum(0, 255)}, ${randomRum(0, 255)}, ${randomRum(0, 255)})`;
+// /////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+aGEL('click', '.btn--show-modal', (e, selector) => {
+    if (e.target.matches(selector)) {
+      e.target.style.border = `4px dotted ${randomColor()}`;
+    }
+  });
+  l(globalThis)
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+let lectures = 'lectures';
+
+export { lectures };
+
+

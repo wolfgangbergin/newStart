@@ -1,20 +1,38 @@
 'use strict';
+// /////////////////////////////////////////////////////////////////////////////////////////
 
 globalThis.l = console.log;
+globalThis.aGEL = function (type, selector, callback) {
+    document.addEventListener(type, (e) => {
+      if (e.target.matches(selector)) callback(e, selector);
+    });
+  }
+
 // /////////////////////////////////////////////////////////////////////////////////////////
-// let testState = true;
-// const HH1 = document.querySelector('h1');
 
-// const wolfArrow1 = (param1) => {
-//   l(HH1);
-//   //HH1.removeEventListener('mouseenter', wolfArrow1);
-// };
+let temp = 0;
+let randomRum = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
 
-// HH1.addEventListener('mouseenter', wolfArrow1);
+let randomColor = () =>
+  ` rgb(${randomRum(0, 255)}, ${randomRum(0, 255)}, ${randomRum(0, 255)})`;
+// /////////////////////////////////////////////////////////////////////////////////////////
 
 
-// setTimeout(()=>{  HH1.removeEventListener('mouseenter', wolfArrow1)}, 5000)
-l('banana')
+
+
+
+aGEL('click', '.btn--show-modal', (e, selector) => {
+    if (e.target.matches(selector)) {
+      e.target.style.border = `4px dotted ${randomColor()}`;
+    }
+  });
+  l(globalThis)
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 let lectures = 'lectures';
