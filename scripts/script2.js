@@ -1,4 +1,18 @@
 'use strict';
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+globalThis.l = console.log;
+
+globalThis.aGEL = function (type, callback, selector) {
+  document.querySelector(selector).addEventListener(type, (e) => {
+   
+    callback(e);
+    e.preventDefault();
+  });
+};
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+
 let section1 = document.querySelector('#section--1');
 
 let btnScrollTo = document.querySelector('.btn--scroll-to');
@@ -6,29 +20,51 @@ btnScrollTo.addEventListener('click', e => {
   section1.scrollIntoView({behavior: 'smooth'})
 
 });
+// /////////////////////////////////////////////////////////////////////////////////////////
+aGEL(
+  'click',
+  function (e) {
+    l(e.target);
+  },
+  'body'
+);
 
-// document.querySelector('#wolf').addEventListener('click', function (e) {
-//   e.preventDefault();
+let temp = 0;
+let randomRum = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
 
-//   let id = this.getAttribute('href');
-//   l(e.currentTarget === this)
-//   document.querySelector(id).scrollIntoView({behavior: 'smooth'})
-// });
+let randomColor = () =>
+  ` rgb(${randomRum(0, 255)}, ${randomRum(0, 255)}, ${randomRum(0, 255)})`;
 
-// document.querySelectorAll('.nav__link').forEach(ele=>ele.addEventListener('click', function (e) {
-//   e.preventDefault();
+aGEL(
+  'click',
+  (e) => {
+    e.target.style.backgroundColor = ` ${randomColor()}`;
+  },
+  '.btn--show-modal'
+);
+// /////////////////////////////////////////////////////////////////////////////////////////
+aGEL(
+  'click',
+  (e) => {
+  
+    if (
+      !(e.target.getAttribute('href') === '#') &&
+      e.target.classList.contains('nav__link')
+    ) {
+      document
+        .querySelector(e.target.getAttribute('href'))
+        .scrollIntoView({ behavior: 'smooth' });
+    }
+  },
+  '.nav__links'
+);
 
-//   document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'})
-// }))
 
 
-// document.querySelectorAll('.nav__link').forEach(ele=>{
-//   aGEL('click', '.nav__link', (e,) => {
-//     e.preventDefault();
-//     document.querySelector(e.target.getAttribute('href')).scrollIntoView({behavior: 'smooth'})
-      
-//   }  )
-// })
+// /////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 export let script2 = 'script2';

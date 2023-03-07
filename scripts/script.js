@@ -4,8 +4,8 @@
 
 
 
-import { lectures } from "./lectures.js";
 import { script2 } from "./script2.js";
+import { lectures } from "./lectures.js";
  
 
 document.body.style="background:black"
