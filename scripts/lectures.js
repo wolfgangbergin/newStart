@@ -2,18 +2,21 @@
 // /////////////////////////////////////////////////////////////////////////////////////////
 globalThis.l = console.log;
 
-globalThis.aGEL = function (type,  callback, selector,) {
-    document.addEventListener(type, (e) => {
-      callback(e, selector,);
-    });
-  }
+globalThis.aGEL = function (type, callback, selector) {
+  document.querySelector(selector).addEventListener(type, (e) => {
+    e.preventDefault();
+    callback(e);
+  });
+};
 
-  // /////////////////////////////////////////////////////////////////////////////////////////
-  aGEL('click', function (e) {
-   
-    l(e.target)
-  
-    },);
+// /////////////////////////////////////////////////////////////////////////////////////////
+aGEL(
+  'click',
+  function (e) {
+    l(e.target);
+  },
+  'body'
+);
 
 let temp = 0;
 let randomRum = (min, max) => {
@@ -23,14 +26,31 @@ let randomRum = (min, max) => {
 let randomColor = () =>
   ` rgb(${randomRum(0, 255)}, ${randomRum(0, 255)}, ${randomRum(0, 255)})`;
 
-aGEL('click', (e, selector,) => {
- 
-    if (e.target.matches(selector,)) {
-      e.target.style.backgroundColor = ` ${randomColor()}`;
-    }
-  }, '.btn--show-modal', );
+aGEL(
+  'click',
+  (e) => {
+    e.target.style.backgroundColor = ` ${randomColor()}`;
+  },
+  '.btn--show-modal'
+);
 // /////////////////////////////////////////////////////////////////////////////////////////
 
+aGEL(
+  'click',
+  (e) => {
+    if (
+      !(e.target.getAttribute('href') === '#') &&
+      e.target.getAttribute('href')
+    ) {
+      document
+        .querySelector(e.target.getAttribute('href'))
+        .scrollIntoView({ behavior: 'smooth' });
+    }
+  },
+  '.nav__links'
+);
+
+// /////////////////////////////////////////////////////////////////////////////////////////
 
 // document.querySelector('.nav__links').addEventListener('click', function (e) {
 //     e.preventDefault();
@@ -40,7 +60,6 @@ aGEL('click', (e, selector,) => {
 // }
 // });
 
-
 // aGEL('click', (e, selector,) => {
 //   e.preventDefault();
 //   l(e.target)
@@ -49,13 +68,7 @@ aGEL('click', (e, selector,) => {
 // }
 // }, '.nav__links', );
 
-
-
- 
-
 // /////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 let lectures = 'lectures';
