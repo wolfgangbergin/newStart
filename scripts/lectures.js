@@ -1,20 +1,19 @@
 'use strict';
 // /////////////////////////////////////////////////////////////////////////////////////////
 globalThis.l = console.log;
-l('tb2')
+
 globalThis.aGEL = function (type,  callback, selector,) {
     document.addEventListener(type, (e) => {
       callback(e, selector,);
     });
   }
 
-  document.addEventListener('click', function (e) {
+  // /////////////////////////////////////////////////////////////////////////////////////////
+  aGEL('click', function (e) {
    
     l(e.target)
-     
-    
+  
     },);
-// /////////////////////////////////////////////////////////////////////////////////////////
 
 let temp = 0;
 let randomRum = (min, max) => {
@@ -33,13 +32,13 @@ aGEL('click', (e, selector,) => {
 // /////////////////////////////////////////////////////////////////////////////////////////
 
 
-document.querySelector('.nav__links').addEventListener('click', function (e) {
-    e.preventDefault();
-    e.target.style.backgroundColor = randomColor();
-if(e.target.getAttribute('href')) {
-    document.querySelector(e.target.getAttribute('href')).scrollIntoView({behavior: 'smooth'})
-}
-});
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//     e.preventDefault();
+//     e.target.style.backgroundColor = randomColor();
+// if(e.target.getAttribute('href')) {
+//     document.querySelector(e.target.getAttribute('href')).scrollIntoView({behavior: 'smooth'})
+// }
+// });
 
 
 // aGEL('click', (e, selector,) => {
