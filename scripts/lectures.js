@@ -1,7 +1,7 @@
 'use strict';
 // /////////////////////////////////////////////////////////////////////////////////////////
-
 globalThis.l = console.log;
+l('tb2')
 globalThis.aGEL = function (type,  callback, selector,) {
     document.addEventListener(type, (e) => {
       callback(e, selector,);
@@ -33,22 +33,22 @@ aGEL('click', (e, selector,) => {
 // /////////////////////////////////////////////////////////////////////////////////////////
 
 
-// document.querySelector('.nav__links').addEventListener('click', function (e) {
-//     e.preventDefault();
-//     e.target.style.backgroundColor = randomColor();
-// if(e.target.getAttribute('href')) {
-//     document.querySelector(e.target.getAttribute('href')).scrollIntoView({behavior: 'smooth'})
-// }
-// });
-
-
-aGEL('click', (e, selector,) => {
-  e.preventDefault();
-  l(e.target)
-  if(e.target.getAttribute('href')) {
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+    e.preventDefault();
+    e.target.style.backgroundColor = randomColor();
+if(e.target.getAttribute('href')) {
     document.querySelector(e.target.getAttribute('href')).scrollIntoView({behavior: 'smooth'})
 }
-}, '.nav__links', );
+});
+
+
+// aGEL('click', (e, selector,) => {
+//   e.preventDefault();
+//   l(e.target)
+//   if(e.target.getAttribute('href')) {
+//     document.querySelector(e.target.getAttribute('href')).scrollIntoView({behavior: 'smooth'})
+// }
+// }, '.nav__links', );
 
 
 
