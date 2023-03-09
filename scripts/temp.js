@@ -328,3 +328,84 @@ aGEL(
 // /////////////////////////////////////////////////////////////////////////////////////////
 
 // /////////////////////////////////////////////////////////////////////////////////////////
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+
+// get h1 element   
+let h1 = document.querySelector('h1');
+
+// l(h1.querySelectorAll('.highlight'));
+// l(h1.childNodes);
+// l(h1.children);
+h1.firstElementChild.style.color = 'white';
+h1.lastElementChild.style.color = 'orangered';
+
+// l(h1.parentNode);
+// l(h1.parentElement);
+
+h1.closest('.header').style.background = 'var(--wolfGrandient)';
+h1.closest('h1').style.background = 'var(--gradient-primary)';
+
+// l(h1.previousElementSibling);
+// l(h1.nextElementSibling);
+// l(h1.previousSibling);
+// l(h1.nextSibling);
+// l(h1.parentElement.children);
+
+// [...h1.parentElement.children].forEach(function (el) {
+//     l(el)
+//     el !== h1 && (el.style.border = `10px solid ${randomColor()}`);
+// });
+
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////////////////
+
+let header = document.querySelector('header');
+// let temp1 = header.lastElementChild.children;
+// let temp2 = header.firstElementChild;
+// let temp3 = temp1[0].cloneNode(false);
+// temp3.style.backgroundColor = `${randomColor()}`;
+// temp3.textContent = 'Wolfgang Bergin';
+// temp2.style.border = `5px dotted ${randomColor()}`;
+// temp2.appendChild(temp3);
+// let temp4 = header.closest('header')
+// temp4.style.backgroundColor = `${randomColor()}`;
+
+// let temp5 = header.nextElementSibling;
+// temp5.style.backgroundColor = `${randomColor()}`;
+
+// temp5.previousElementSibling.style.backgroundColor = `${randomColor()}`;
+// temp5.nextElementSibling.style.backgroundColor = `${randomColor()}`;
+
+// temp5.nextElementSibling.nextElementSibling.style.backgroundColor = `${randomColor()}`;
+// temp5.nextElementSibling.nextElementSibling.nextElementSibling.style.backgroundColor = `${randomColor()}`;
+// temp5.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.backgroundColor = `${randomColor()}`;
+// l(temp5.nextSibling.nextSibling.previousSibling);
+
+
+let temp6 = header.parentNode.parentNode.childNodes[1].children;
+l(temp6);
+for(const [key, ele] of Object.entries(temp6)){
+    l(ele)
+   !(ele === header ) && (ele.style.backgroundColor = `${randomColor()}`);
+  
+}
+
+
+// let temp8 = document.querySelectorAll('section');
+// l(temp8 );
+
+// for(const [key, ele] of Object.entries(temp8)){
+//     l(ele)
+//     ele.style.backgroundColor = `${randomColor()}`;
+// }
+
+// for (const ele of temp8) {
+//         ele.style.backgroundColor = `${randomColor()}`;
+//     }
+// Array.from(temp8).forEach(ele=>ele.style.backgroundColor = `${randomColor()}`)
+// temp8.forEach(ele=>ele.style.backgroundColor = `${randomColor()}`)
+// [...temp8].forEach(ele=>ele.style.backgroundColor = `${randomColor()}`)
+// /////////////////////////////////////////////////////////////////////////////////////////
+let lectures = 'lectures';

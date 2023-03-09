@@ -5,7 +5,7 @@ globalThis.l = console.log;
 
 globalThis.aGEL = function (type, callback, selector) {
   document.querySelector(selector).addEventListener(type, (e) => {
-   
+    
     callback(e);
     e.preventDefault();
   });
@@ -34,7 +34,7 @@ let randomRum = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-let randomColor = () =>
+globalThis.randomColor = () =>
   ` rgb(${randomRum(0, 255)}, ${randomRum(0, 255)}, ${randomRum(0, 255)})`;
 
 aGEL(
@@ -46,17 +46,20 @@ aGEL(
 );
 // /////////////////////////////////////////////////////////////////////////////////////////
 aGEL(
+
   'click',
-  (e) => {
-  
+  (e) => { 
+  l(e.target.dataset.wolfgangBergin);
     if (
       !(e.target.getAttribute('href') === '#') &&
       e.target.classList.contains('nav__link')
     ) {
       document
-        .querySelector(e.target.getAttribute('href'))
+        .querySelector(e.target.getAttribute('wolfgangBergin'))
         .scrollIntoView({ behavior: 'smooth' });
+       
     }
+
   },
   '.nav__links'
 );
