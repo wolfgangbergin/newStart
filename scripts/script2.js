@@ -63,6 +63,30 @@ aGEL(
   },
   '.nav__links'
 );
+// /////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+aGEL('click', (e) => {
+    
+  const operationsContent = document.querySelectorAll('.operations__content');
+  const button = e.target.closest('button');
+  if (!button) return;
+  [...e.currentTarget.children].forEach((ele) =>
+      ele.classList.remove('operations__tab--active')
+  );
+  Array.from(operationsContent).forEach((ele) => {
+      ele.classList.remove(`operations__content--active`);
+  });
+  Array.from(operationsContent);
+  button.classList.add('operations__tab--active');
+  const temp1 = document.querySelector(
+      `.operations__content--${button.dataset.tab}`
+  );
+  
+  temp1.classList.add(`operations__content--active`);
+}, '.operations__tab-container');
+
 
 
 
