@@ -21,13 +21,13 @@ btnScrollTo.addEventListener('click', e => {
 
 });
 // /////////////////////////////////////////////////////////////////////////////////////////
-aGEL(
-  'click',
-  function (e) {
-    l(e.target);
-  },
-  'body'
-);
+// aGEL(
+//   'click',
+//   function (e) {
+//     l(e.target);
+//   },
+//   'body'
+// );
 
 let temp = 0;
 let randomRum = (min, max) => {
