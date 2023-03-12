@@ -408,4 +408,84 @@ for(const [key, ele] of Object.entries(temp6)){
 // temp8.forEach(ele=>ele.style.backgroundColor = `${randomColor()}`)
 // [...temp8].forEach(ele=>ele.style.backgroundColor = `${randomColor()}`)
 // /////////////////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////////////////
+
+const nav = document.querySelector('.nav');
+
+nav.addEventListener('mouseover', function (e) {
+  if (!e.target.classList.contains('nav__link')) return;
+
+  const link = e.target;
+  const silblings = link.closest('.nav').querySelectorAll('.nav__link');
+
+  const logo = link.closest('.nav').querySelector('img');
+
+  silblings.forEach((el) => {
+    if (el !== link) {
+        
+        el.style.opacity = 0.3;
+       
+        
+    }
+    e.target.classList.add('red')
+    logo.style.opacity = 0.3;
+  });
+  
+});
+nav.addEventListener('mouseout', function (e) {
+    if (!e.target.classList.contains('nav__link')) return;
+
+    const link = e.target;
+    const silblings = link.closest('.nav').querySelectorAll('.nav__link');
+  
+    const logo = link.closest('.nav').querySelector('img');
+  
+    silblings.forEach((el) => {
+      if (el !== link) {
+          
+          el.style.opacity = 1;
+         
+          
+      }
+        e.target.classList.remove('red')
+      logo.style.opacity = 1;
+    });
+    
+});
+/////////////////////////////////////////////////////////////////////////////////////////
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+
+const nav = document.querySelector('.nav');
+
+const navFunction = function (e, param2, param3) {
+    l(this)
+    l(e)
+    l(param2)
+    l(param3)
+
+    if (!e.target.classList.contains('nav__link')) return;
+  const link = e.target;
+  const silblings = link.closest('.nav').querySelectorAll('.nav__link');
+
+  silblings.forEach((el) => {
+    if (el !== link) {
+      el.style.opacity = this
+  el.style.transition = 'all .5s';
+  e.type === 'mouseover' ? e.target.classList.add('red') : e.target.classList.remove('red');
+  
+    }
+   
+  });
+};
+
+//nav.addEventListener('mouseover',  navFunction.bind(0.1,));
+nav.addEventListener('mouseover',  (e)=>navFunction.call('wolf212', e, 0.1, 'kim313'));
+//nav.addEventListener('mouseout', (e)=>navFunction(e, 1, 'kim313'));
+
+
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+
+
 let lectures = 'lectures';

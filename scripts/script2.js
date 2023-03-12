@@ -49,7 +49,7 @@ aGEL(
 
   'click',
   (e) => { 
-  l(e.target.dataset.wolfgangBergin);
+  
     if (
       !(e.target.getAttribute('href') === '#') &&
       e.target.classList.contains('nav__link')
@@ -91,7 +91,29 @@ aGEL('click', (e) => {
 
 
 // /////////////////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////////////////
 
+const nav = document.querySelector('.nav');
+
+const navFunction = function (e) {
+  if (!e.target.classList.contains('nav__link')) return;
+  const link = e.target;
+  const silblings = link.closest('.nav').querySelectorAll('.nav__link');
+  silblings.forEach((el) => {
+    if (el !== link) {
+      el.style.opacity = e.type === 'mouseover' ? 0.3 : 1;
+      el.style.transition = 'all .5s';
+      e.type === 'mouseover'
+        ? e.target.classList.add('red')
+        : e.target.classList.remove('red');
+    }
+  });
+};
+
+nav.addEventListener('mouseover', navFunction);
+nav.addEventListener('mouseout', navFunction);
+
+// /////////////////////////////////////////////////////////////////////////////////////////
 
 
 export let script2 = 'script2';

@@ -676,7 +676,19 @@ h4 {
 }
 
 
-.test{
+.wolf313{
   
-  background-color: white;
+  
+  font-size: 2.5rem;
 }
+
+.red{
+  
+ border: red 2px solid;
+ color: red !important;
+ text-emphasis: bold;
+ font-size: 900;
+ font-weight: 900;
+transform: scale(1.5);
+}
+
