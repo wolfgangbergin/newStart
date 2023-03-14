@@ -1,19 +1,16 @@
 'use strict';
 ({
-    plugins: ["jsdom-quokka-plugin"]
-})
-import {testKim} from './node2.js'
-import {addDays} from "date-fns"
-const L = console.log
-globalThis.l = console.log
+  plugins: ['jsdom-quokka-plugin'],
+});
 
- let node1Func = function(){
+const L = console.log;
+globalThis.l = console.log;
 
-let wolf = 'wolf'
-wolf//?
+let node1Func = function () {
 
+   l = console.log
 
-}
+    l(this)
+};
 
-
-node1Func()
+node1Func();

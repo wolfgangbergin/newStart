@@ -2,23 +2,26 @@
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 
-// let wolf313 = document.querySelector('#wolf313');
-// /////////////////////////////////////////////////////////////////////////////////////////
-// let kim =function (param1,param2,e) {
-//    l(`this: ${this}`)
-//      l(`param1: ${param1}`)
-//     l(`param2: ${param2}`)
-//    l(`e: ${e}`)
-//    e.target.style.backgroundColor = ` ${randomColor()}`;
-// };
+
+let section1Top = document.querySelector('#section--1').getBoundingClientRect().top
+section1Top
+
+let nav = document.querySelector('.nav')
+
+// document.addEventListener("scroll", (e)=>{
+   
+//    if (window.scrollY > section1Top){
+//     nav.classList.add('sticky')
+//    }else{
+    
+//        nav.classList.remove('sticky')
+//    }
+// })
+
 
 // /////////////////////////////////////////////////////////////////////////////////////////
-// wolf313.classList.add('wolf313');
-// //wolf313.addEventListener('click',(e)=>kim(e,1,2,3));
-// //wolf313.addEventListener('click',(e)=>kim.call(e.currentTarget , e ,'WOLF#!#'));
-// //wolf313.addEventListener('click', (e)=>kim.bind(e.currentTarget , e ,'WOLF#!#')(e));
-// //wolf313.addEventListener('click', (e)=> {kim.bind(e.currentTarget , e ,'WOLF#!#')()});
-// wolf313.addEventListener('click', kim.bind( 'this' , 'jojo', 'kim212'));
+
+
 
 
 // /////////////////////////////////////////////////////////////////////////////////////////
