@@ -1,48 +1,29 @@
 'use strict';
 
 // /////////////////////////////////////////////////////////////////////////////////////////
-let section1 = document.querySelector('#section--1');
-section1.style="background:yellow";
-let section1Top = section1.getBoundingClientRect().top;
+const nav = document.querySelector('.nav');
+const navHeight = nav.getBoundingClientRect().height
 
-let nav = document.querySelector('.nav');
 
-// document.addEventListener("scroll", (e)=>{
+const header = document.querySelector('header');
 
-//    if (window.scrollY > section1Top){
-//     nav.classList.add('sticky')
-//    }else{
+const obsCallBack = (entries) => {
+  entries[0].isIntersecting
+    ? nav.classList.remove('sticky')
+    : nav.classList.add('sticky');
+};
 
-//        nav.classList.remove('sticky')
-//    }
-// })
+const obvOption = {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+};
+
+const headerObserver = new IntersectionObserver(obsCallBack, obvOption);
+
+headerObserver.observe(header);
 
 // /////////////////////////////////////////////////////////////////////////////////////////
-
-let obsCallBack = function (entries, observer1) {
-  entries.forEach((entry) => {
-    D(entry);
-    if(entry.isIntersecting){
-        nav.classList.add('sticky')
-
-    }else{
-                nav.classList.remove('sticky')
-
-    }
-    
-  });
-
-};
-
-let obsOptions = {
-  root: null,
-  threshold: .3,
- 
-};
-
-const observer1 = new IntersectionObserver(obsCallBack, obsOptions);
-
-observer1.observe(section1);
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 const lectures = 'lectures';

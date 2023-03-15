@@ -1,7 +1,7 @@
 'use strict';
 
 // /////////////////////////////////////////////////////////////////////////////////////////
-
+// global custom function for adding event listener 
 
 globalThis.aGEL = function (type, callback, selector) {
   document.querySelector(selector).addEventListener(type, (e) => {
@@ -12,6 +12,29 @@ globalThis.aGEL = function (type, callback, selector) {
 };
 
 // /////////////////////////////////////////////////////////////////////////////////////////
+// dom elements
+const nav = document.querySelector('.nav');
+const navHeight = nav.getBoundingClientRect().height
+const header = document.querySelector('header');
+// /////////////////////////////////////////////////////////////////////////////////////////
+// navbar sticky function
+const obsCallBack = (entries) => {
+  entries[0].isIntersecting
+    ? nav.classList.remove('sticky')
+    : nav.classList.add('sticky');
+};
+
+const obvOption = {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+};
+
+const headerObserver = new IntersectionObserver(obsCallBack, obvOption);
+
+headerObserver.observe(header);
+
+// /////////////////////////////////////////////////////////////////////////////////////////
 
 let section1 = document.querySelector('#section--1');
 
@@ -20,16 +43,9 @@ btnScrollTo.addEventListener('click', e => {
   section1.scrollIntoView({behavior: 'smooth'})
 
 });
-// /////////////////////////////////////////////////////////////////////////////////////////
-// aGEL(
-//   'click',
-//   function (e) {
-//     l(e.target);
-//   },
-//   'body'
-// );
 
-let temp = 0;
+/////////////////////////////////////////////////////////////////////////////////////////
+
 let randomRum = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
@@ -102,7 +118,7 @@ const navFunction = function (e) {
   const silblings = link.closest('.nav').querySelectorAll('.nav__link');
   silblings.forEach((el) => {
     if (el !== link) {
-      el.style.opacity = e.type === 'mouseover' ? 0.3 : 1;
+      // el.style.opacity = e.type === 'mouseover' ? 0.3 : 1;
       el.style.transition = 'all .5s';
       e.type === 'mouseover'
         ? e.target.classList.add('red')
