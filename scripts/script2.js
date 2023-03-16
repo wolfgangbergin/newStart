@@ -1,5 +1,8 @@
 'use strict';
 
+
+window.l = console.log;
+window.d = console.dir;
 // /////////////////////////////////////////////////////////////////////////////////////////
 // global custom function for adding event listener 
 
@@ -13,6 +16,10 @@ globalThis.aGEL = function (type, callback, selector) {
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 // dom elements
+window.section1 = document.querySelector('#section--1');
+window.section2 = document.querySelector('#section--2');
+window.section3 = document.querySelector('#section--3');
+window.section4 = document.querySelector('#section--4');
 const nav = document.querySelector('.nav');
 const navHeight = nav.getBoundingClientRect().height
 const header = document.querySelector('header');
@@ -36,7 +43,7 @@ headerObserver.observe(header);
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 
-let section1 = document.querySelector('#section--1');
+
 
 let btnScrollTo = document.querySelector('.btn--scroll-to');
 btnScrollTo.addEventListener('click', e => {

@@ -1,29 +1,38 @@
 'use strict';
+import { script2 } from './script2.js';
+// /////////////////////////////////////////////////////////////////////////////////////////
+//section1 = document.querySelector('#section--1');
+
+// .section--hidden {
+//   opacity: 0;
+//   transform: translateY(8rem);
+// }
+/////////////////////////////////////////////////////////////////////////////////////////
+const sections = document.querySelectorAll('.section');
 
 // /////////////////////////////////////////////////////////////////////////////////////////
-const nav = document.querySelector('.nav');
-const navHeight = nav.getBoundingClientRect().height
+const obsCallBack = ( ele, ) => {
+  return (entries,)=>{
+    entries[0].isIntersecting
+      ? ele.classList.remove('section--hidden')
+      : ele.classList.add('section--hidden');
+  }
 
-
-const header = document.querySelector('header');
-
-const obsCallBack = (entries) => {
-  entries[0].isIntersecting
-    ? nav.classList.remove('sticky')
-    : nav.classList.add('sticky');
 };
 
 const obvOption = {
   root: null,
-  threshold: 0,
-  rootMargin: `-${navHeight}px`,
+  threshold: 0.3,
 };
 
-const headerObserver = new IntersectionObserver(obsCallBack, obvOption);
 
-headerObserver.observe(header);
 
-// /////////////////////////////////////////////////////////////////////////////////////////
+sections.forEach((ele) => {
+  new IntersectionObserver(
+    obsCallBack( ele, ),
+    obvOption
+  ).observe(ele);
+});
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 const lectures = 'lectures';
