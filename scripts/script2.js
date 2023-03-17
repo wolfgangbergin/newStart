@@ -16,13 +16,45 @@ globalThis.aGEL = function (type, callback, selector) {
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 // dom elements
-window.section1 = document.querySelector('#section--1');
-window.section2 = document.querySelector('#section--2');
-window.section3 = document.querySelector('#section--3');
-window.section4 = document.querySelector('#section--4');
+const sections = document.querySelectorAll('.section');
 const nav = document.querySelector('.nav');
 const navHeight = nav.getBoundingClientRect().height
 const header = document.querySelector('header');
+// /////////////////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////////////////
+const revealSection = (entries, observer, ) => {
+  entries[0].isIntersecting ?
+    entries[0].target.classList.remove('section--hidden') :
+    entries[0].target.classList.add('section--hidden');
+
+};
+
+const obvOption = {
+root: null,
+threshold: 0.4,
+};
+
+
+
+sections.forEach((section) => {
+new IntersectionObserver(
+ revealSection,
+  obvOption
+).observe(section);
+section.classList.add('section--hidden');
+});
+
+// /////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
 // /////////////////////////////////////////////////////////////////////////////////////////
 // navbar sticky function
 const obsCallBack = (entries) => {
@@ -31,13 +63,13 @@ const obsCallBack = (entries) => {
     : nav.classList.add('sticky');
 };
 
-const obvOption = {
+const obvOptionNav = {
   root: null,
   threshold: 0,
   rootMargin: `-${navHeight}px`,
 };
 
-const headerObserver = new IntersectionObserver(obsCallBack, obvOption);
+const headerObserver = new IntersectionObserver(obsCallBack, obvOptionNav);
 
 headerObserver.observe(header);
 

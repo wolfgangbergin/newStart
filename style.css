@@ -45,8 +45,9 @@ body {
 
 .section--hidden {
   opacity: 0;
-  transform: translateX(20rem);
+  transform: translateX(-20rem);
   transform: translateX(8rem);
+  
 }
 
 .section__title {
