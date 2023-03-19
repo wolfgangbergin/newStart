@@ -1,5 +1,5 @@
 'use strict';
-
+import { loadImg } from "./lectures.js";
 
 window.l = console.log;
 window.d = console.dir;
@@ -16,6 +16,7 @@ globalThis.aGEL = function (type, callback, selector) {
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 // dom elements
+//const section1 = document.querySelector('#section--1')
 const sections = document.querySelectorAll('.section');
 const nav = document.querySelector('.nav');
 const navHeight = nav.getBoundingClientRect().height
@@ -23,15 +24,20 @@ const header = document.querySelector('header');
 // /////////////////////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////////////////
 const revealSection = (entries, observer, ) => {
-  entries[0].isIntersecting ?
-    entries[0].target.classList.remove('section--hidden') :
-    entries[0].target.classList.add('section--hidden');
+if (entries[0].isIntersecting) {
+  //loadImg()
+  entries[0].target.classList.remove('section--hidden') 
+} else{
+  entries[0].target.classList.add('section--hidden');
+}
+    
+    
 
 };
 
 const obvOption = {
 root: null,
-threshold: 0.4,
+threshold: 0.3,
 };
 
 

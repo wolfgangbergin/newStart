@@ -45,8 +45,8 @@ body {
 
 .section--hidden {
   opacity: 0;
-  transform: translateX(-20rem);
-  transform: translateX(8rem);
+  
+  transform: translateY(8rem);
   
 }
 
