@@ -1,5 +1,5 @@
 'use strict';
-import { loadImg } from "./lectures.js";
+
 
 window.l = console.log;
 window.d = console.dir;
@@ -16,12 +16,33 @@ globalThis.aGEL = function (type, callback, selector) {
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 // dom elements
-//const section1 = document.querySelector('#section--1')
+let imgTarget = document.querySelectorAll('img[data-src]');
+const section1 = document.querySelector('#section--1')
 const sections = document.querySelectorAll('.section');
 const nav = document.querySelector('.nav');
 const navHeight = nav.getBoundingClientRect().height
 const header = document.querySelector('header');
 // /////////////////////////////////////////////////////////////////////////////////////////
+let lazyLoad = (entries, observer) => {
+  if (!entries[0].isIntersecting) return;
+  entries[0].target.src = entries[0].target.dataset.src;
+  let wolfMan = entries[0].target.addEventListener('load', () => {
+    observer.unobserve(entries[0].target);
+    entries[0].target.classList.remove('lazy-img');
+    entries[0].target.removeEventListener('load', wolfMan);
+  });
+};
+
+const imgObserver = new IntersectionObserver(lazyLoad, {
+  root: null,
+  threshold: 0.4,
+  rootMargin: '400px',
+});
+
+imgTarget.forEach((img) => {
+  imgObserver.observe(img);
+});
+
 // /////////////////////////////////////////////////////////////////////////////////////////
 const revealSection = (entries, observer, ) => {
 if (entries[0].isIntersecting) {
