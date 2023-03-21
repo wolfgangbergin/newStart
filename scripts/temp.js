@@ -762,3 +762,45 @@ table: "jojo's table",
 
 
 // /////////////////////////////////////////////////////////////////////////////////////////
+
+const wolfFunc = function (param1) {
+  document.querySelector('#section--3').scrollIntoView();
+};
+wolfFunc(`testWolf777`);
+const slider = document.querySelector('.slider');
+//slider.style.transform = 'scale(0.6) translateX(-800px)';
+slider.style.transform = 'scale(1) ';
+//slider.style.overflow = 'visible';
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const btnLeft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
+
+const goToSlide = function (param1) {
+  slides.forEach((s, i) => {
+    l(`${100 * (i - currentSlide)} `);
+    s.style.transform = `translateX(${100 * (i - param1)}%)`;
+  });
+};
+
+btnRight.addEventListener('click', (e) => {
+ 
+  nextSlide(1);
+});
+btnLeft.addEventListener('click', (e) => {
+ 
+  nextSlide(-1);
+});
+
+goToSlide(0);
+
+const nextSlide = function (param1) {
+  currentSlide += param1;
+  if (currentSlide === slides.length) currentSlide = 0;
+  if (currentSlide === -1) currentSlide = slides.length - 1;
+  goToSlide(currentSlide);
+
+};
+/////////////////////////////////////////////////////////////////////////////////////////

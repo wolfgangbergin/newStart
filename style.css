@@ -694,3 +694,29 @@ h4 {
 transform: scale(1.5);
 }
 
+.left{
+  transform: scale(0.3) translateX(-120%);
+  opacity: .5;
+  filter: blur(2px);
+}
+.center{
+  transform: scale(1) translateX(0%);
+  opacity: 1;
+  filter: blur(0px);
+}
+.right{
+  transform: scale(0.3) translateX(120%);
+  opacity: .5;
+  filter: blur(2px);
+}
+
+.four{
+  transform: scale(0.1) translateX(-100%);
+  opacity: .5;
+  filter: blur(5px);
+}
+.five{
+  transform: scale(0.1) translateX(100%);
+  opacity: .5;
+  filter: blur(5px);
+}
