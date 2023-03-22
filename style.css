@@ -711,12 +711,12 @@ transform: scale(1.5);
 }
 
 .four{
-  transform: scale(0.1) translateX(-100%);
+  transform: scale(0.2) translateX(-70%);
   opacity: .5;
   filter: blur(5px);
 }
 .five{
-  transform: scale(0.1) translateX(100%);
+  transform: scale(0.2) translateX(70%);
   opacity: .5;
   filter: blur(5px);
 }
