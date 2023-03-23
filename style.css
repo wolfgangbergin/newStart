@@ -462,8 +462,8 @@ h4 {
 }
 
 .dots__dot--active {
-  /* background-color: #fff; */
-  background-color: #888;
+  background-color: #fff;
+  /* background-color: #888; */
   opacity: 1;
 }
 
@@ -700,7 +700,8 @@ h4 {
 transform: scale(1.5);
 }
 
-.one{
+
+.zero{
   transform: scale(0.15) translateX(-70%);
   opacity: .5;
   filter: blur(5px);
@@ -708,24 +709,26 @@ transform: scale(1.5);
   
 }
 
-.two{
+.one{
   transform: scale(0.3) translateX(-120%);
   opacity: .75;
   filter: blur(2px);
 }
-.three{
+.two{
   transform: scale(1) translateX(0%);
   opacity: 1;
   filter: blur(0px);
 }
-.four{
+.three{
   transform: scale(0.3) translateX(120%);
   opacity: .75;
   filter: blur(2px);
 }
 
-.five{
+.four{
   transform: scale(0.15) translateX(70%);
   opacity: .5;
   filter: blur(5px);
 }
+
+
