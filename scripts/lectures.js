@@ -12,9 +12,12 @@ kimSlideFive.innerHTML = ` <div class="testimonial">
   kim!!! lorm ipsum dolor sit, amet consectetur adipisicing elit.
   Accusantium quas quisquam non? Quas voluptate nulla minima
   deleniti optio ullam nesciunt, numquam corporis et asperiores
+  voluptatem, quia, quibusdam voluptas. Quis, quod.
+  deleniti optio ullam nesciunt, numquam corporis et asperiores
+  voluptatem, quia, quibusdam voluptas. Quis, quod.
 </blockquote>
 <address class="testimonial__author">
-  <img src="img/img-2.jpg" alt="" class="testimonial__photo" />
+  <img src="img/img-4.jpg" alt="" class="testimonial__photo" />
   <h6 class="testimonial__name">Francisco Gomes</h6>
   <p class="testimonial__location">Lisbon, Portugal</p>
 </address>
@@ -23,18 +26,27 @@ kimSlideFive.innerHTML = ` <div class="testimonial">
 // /////////////////////////////////////////////////////////////////////////////////////////
 document.querySelector('#section--3').scrollIntoView();
 
+
 /////////////////////////////////////////////////////////////////////////////////////////
-let slideNodeList = document.querySelectorAll('.slide');
+const dotsContainer = document.querySelector('.dots');
+
 let slider = document.querySelector('.slider');
 slider.insertAdjacentElement('beforeend', kimSlideFive);
+let slideNodeList = document.querySelectorAll('.slide');
 //slider.style.overflow = 'hidden';
 //slider.style.transform = ' scale(0.8)';
 let leftBtn = document.querySelector('.slider__btn--left');
 let rightBtn = document.querySelector('.slider__btn--right');
 
+
 // /////////////////////////////////////////////////////////////////////////////////////////
 let tempWolf1 = Array.from(slideNodeList);
 
+const makeDots = function () {
+  slideNodeList.forEach((ele, i) => {
+    dotsContainer.insertAdjacentHTML(`beforeend`,
+     `<button class="dots__dot" data-slide="${i}"></button>`);
+  })};
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -43,9 +55,11 @@ let tempWolf1 = Array.from(slideNodeList);
 const slideFunc = function (paramA, paramB) {
   
   tempWolf1.splice(paramB, 0, ...tempWolf1.splice(paramA, 1));
-  tempWolf1[0].className = 'slide left';
-  tempWolf1[1].className = 'slide center';
-  tempWolf1[2].className = 'slide right';
+  tempWolf1[0].className = 'slide one';
+  tempWolf1[1].className = 'slide two';
+  tempWolf1[2].className = 'slide three';
+  tempWolf1[3].className = 'slide four';
+  tempWolf1[4].className = 'slide five';
  
 };
 // /////////////////////////////////////////////////////////////////////////////////////////
@@ -59,7 +73,19 @@ leftBtn.addEventListener('click', (e) => {
   slideFunc(tempWolf1.length - 1, 0);
 });
 
+document.addEventListener('keydown', (e) => {
+  
+  if (e.key === 'ArrowRight') {
+    slideFunc(0, tempWolf1.length - 1);
+  } else if (e.key === 'ArrowLeft') {
+    slideFunc(tempWolf1.length - 1, 0);
+  }
+});
 // /////////////////////////////////////////////////////////////////////////////////////////
+const init = function () {
+makeDots();
+};
+init();
 
 // /////////////////////////////////////////////////////////////////////////////////////////
 const lectures = 'lectures';

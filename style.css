@@ -469,11 +469,13 @@ h4 {
 
 /* TESTIMONIALS */
 .testimonial {
+  
   width: 65%;
   position: relative;
 }
 
 .testimonial::before {
+  
   content: '\201C';
   position: absolute;
   top: -5.7rem;
@@ -486,29 +488,33 @@ h4 {
 }
 
 .testimonial__header {
+  
   font-size: 2.25rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
 .testimonial__text {
+
   font-size: 1.7rem;
   margin-bottom: 3.5rem;
   color: #666;
 }
 
 .testimonial__author {
-  margin-left: 3rem;
+ 
+  margin-left: 15rem;
+  margin-right: 15rem;
   font-style: normal;
 
   display: grid;
-  grid-template-columns: 6.5rem 1fr;
+  grid-template-columns: 15rem 1fr;
   column-gap: 2rem;
 }
 
 .testimonial__photo {
   grid-row: 1 / span 2;
-  width: 6.5rem;
+  width: 15rem;
   border-radius: 50%;
 }
 
@@ -694,29 +700,32 @@ h4 {
 transform: scale(1.5);
 }
 
-.left{
-  transform: scale(0.3) translateX(-120%);
+.one{
+  transform: scale(0.15) translateX(-70%);
   opacity: .5;
+  filter: blur(5px);
+  
+  
+}
+
+.two{
+  transform: scale(0.3) translateX(-120%);
+  opacity: .75;
   filter: blur(2px);
 }
-.center{
+.three{
   transform: scale(1) translateX(0%);
   opacity: 1;
   filter: blur(0px);
 }
-.right{
+.four{
   transform: scale(0.3) translateX(120%);
-  opacity: .5;
+  opacity: .75;
   filter: blur(2px);
 }
 
-.four{
-  transform: scale(0.2) translateX(-70%);
-  opacity: .5;
-  filter: blur(5px);
-}
 .five{
-  transform: scale(0.2) translateX(70%);
+  transform: scale(0.15) translateX(70%);
   opacity: .5;
   filter: blur(5px);
 }
