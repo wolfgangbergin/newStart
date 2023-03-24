@@ -502,7 +502,7 @@ h4 {
 }
 
 .testimonial__author {
- 
+  border: 1px solid #ddd;
   margin-left: 15rem;
   margin-right: 15rem;
   font-style: normal;
@@ -514,8 +514,9 @@ h4 {
 
 .testimonial__photo {
   grid-row: 1 / span 2;
-  width: 15rem;
+  width: 5rem;
   border-radius: 50%;
+ 
 }
 
 .testimonial__name {
