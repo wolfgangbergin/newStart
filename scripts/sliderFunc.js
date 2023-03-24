@@ -71,7 +71,7 @@ const sliderFunc = function () {
       .classList.add('dots__dot--active');
   };
   /////////////////////////////////////////////////////////////////////////////////////////
-  
+
   // /////////////////////////////////////////////////////////////////////////////////////////
   const slideFunc = function (paramA, paramB) {
     tempWolf1.splice(paramB, 0, ...tempWolf1.splice(paramA, 1));
@@ -99,55 +99,40 @@ const sliderFunc = function () {
     }
   });
   // /////////////////////////////////////////////////////////////////////////////////////////
+
+  const wolfFunc = function (param1) {
+    let tempCount = 0;
+    const kimFunf = function () {
+      if (tempCount < param1) {
+        slideFunc(0, tempWolf1.length - 1);
+        tempCount++;
+        kimFunf();
+      } else if (tempCount > param1) {
+        slideFunc(tempWolf1.length - 1, 0);
+        tempCount--;
+        kimFunf();
+      } else if (tempCount === param1) {
+        return;
+      }
+    };
+    kimFunf();
+  };
+
+  // /////////////////////////////////////////////////////////////////////////////////////////
   dotsContainer.addEventListener('click', (e) => {
     const currentSlide = document.querySelector('.slide.two');
-    //l(+currentSlide.dataset.slide)
+
     if (e.target.classList.contains('dots__dot')) {
       const { slide } = e.target.dataset;
 
-      //l(+currentSlide.dataset.slide - +slide);
-      l(+slide - +currentSlide.dataset.slide );
-        if (+slide - +currentSlide.dataset.slide === 0) {
-        return;
-        } else if (+slide - +currentSlide.dataset.slide === 1) {
-        slideFunc(0, 4);
-        } else if (+slide - +currentSlide.dataset.slide === 2) {
-      slideFunc(0, 4);
-      slideFunc(0, 4);
-        } else if (+slide - +currentSlide.dataset.slide === 3) {
-        slideFunc(0, 4);
-        slideFunc(0, 4);
-        slideFunc(0, 4);
-        } else if (+slide - +currentSlide.dataset.slide === 4) {
-        slideFunc(0, 4);
-        slideFunc(0, 4);    
-        slideFunc(0, 4);
-        slideFunc(0, 4);
-        } else if (+slide - +currentSlide.dataset.slide === -1) {
-        slideFunc(4, 0);
-        } else if (+slide - +currentSlide.dataset.slide === -2) {
-        slideFunc(4, 0);
-        slideFunc(4, 0);
-        } else if (+slide - +currentSlide.dataset.slide === -3) {
-        slideFunc(4, 0);
-        slideFunc(4, 0);
-        slideFunc(4, 0);
-        } else if (+slide - +currentSlide.dataset.slide === -4) {
-        slideFunc(4, 0);
-        slideFunc(4, 0);
-        slideFunc(4, 0);
-        slideFunc(4, 0);
-        }
+      wolfFunc(+slide - +currentSlide.dataset.slide);
     }
   });
   // /////////////////////////////////////////////////////////////////////////////////////////
   const init = function () {
     makeDots();
-   
-    slideFunc(0, 0);
-    
 
-    
+    slideFunc(0, 0);
   };
   init();
 };
