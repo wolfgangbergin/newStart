@@ -71,14 +71,7 @@ const sliderFunc = function () {
       .classList.add('dots__dot--active');
   };
   /////////////////////////////////////////////////////////////////////////////////////////
-  dotsContainer.addEventListener('click', (e) => {
-    if (e.target.classList.contains('dots__dot')) {
-      const { slide } = e.target.dataset;
-
-      //slideFunc(slide, 0);
-      activeDot(slide);
-    }
-  });
+  
   // /////////////////////////////////////////////////////////////////////////////////////////
   const slideFunc = function (paramA, paramB) {
     tempWolf1.splice(paramB, 0, ...tempWolf1.splice(paramA, 1));
@@ -106,10 +99,55 @@ const sliderFunc = function () {
     }
   });
   // /////////////////////////////////////////////////////////////////////////////////////////
+  dotsContainer.addEventListener('click', (e) => {
+    const currentSlide = document.querySelector('.slide.two');
+    //l(+currentSlide.dataset.slide)
+    if (e.target.classList.contains('dots__dot')) {
+      const { slide } = e.target.dataset;
+
+      //l(+currentSlide.dataset.slide - +slide);
+      l(+slide - +currentSlide.dataset.slide );
+        if (+slide - +currentSlide.dataset.slide === 0) {
+        return;
+        } else if (+slide - +currentSlide.dataset.slide === 1) {
+        slideFunc(0, 4);
+        } else if (+slide - +currentSlide.dataset.slide === 2) {
+      slideFunc(0, 4);
+      slideFunc(0, 4);
+        } else if (+slide - +currentSlide.dataset.slide === 3) {
+        slideFunc(0, 4);
+        slideFunc(0, 4);
+        slideFunc(0, 4);
+        } else if (+slide - +currentSlide.dataset.slide === 4) {
+        slideFunc(0, 4);
+        slideFunc(0, 4);    
+        slideFunc(0, 4);
+        slideFunc(0, 4);
+        } else if (+slide - +currentSlide.dataset.slide === -1) {
+        slideFunc(4, 0);
+        } else if (+slide - +currentSlide.dataset.slide === -2) {
+        slideFunc(4, 0);
+        slideFunc(4, 0);
+        } else if (+slide - +currentSlide.dataset.slide === -3) {
+        slideFunc(4, 0);
+        slideFunc(4, 0);
+        slideFunc(4, 0);
+        } else if (+slide - +currentSlide.dataset.slide === -4) {
+        slideFunc(4, 0);
+        slideFunc(4, 0);
+        slideFunc(4, 0);
+        slideFunc(4, 0);
+        }
+    }
+  });
+  // /////////////////////////////////////////////////////////////////////////////////////////
   const init = function () {
     makeDots();
-    //activeDot(`2`);
+   
     slideFunc(0, 0);
+    
+
+    
   };
   init();
 };
