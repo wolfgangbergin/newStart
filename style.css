@@ -469,7 +469,7 @@ h4 {
 
 /* TESTIMONIALS */
 .testimonial {
-  
+  /* border: 1px solid white; */
   width: 65%;
   position: relative;
 }
@@ -502,7 +502,7 @@ h4 {
 }
 
 .testimonial__author {
-  border: 1px solid #ddd;
+ 
   margin-left: 15rem;
   margin-right: 15rem;
   font-style: normal;
@@ -514,9 +514,8 @@ h4 {
 
 .testimonial__photo {
   grid-row: 1 / span 2;
-  width: 5rem;
+  width: 10rem;
   border-radius: 50%;
- 
 }
 
 .testimonial__name {
@@ -703,9 +702,9 @@ transform: scale(1.5);
 
 
 .zero{
-  transform: scale(0.15) translateX(-70%);
+  transform: scale(0.15) translateX(-90%);
   opacity: .5;
-  filter: blur(5px);
+  filter: blur(10px);
   
   
 }
@@ -727,9 +726,14 @@ transform: scale(1.5);
 }
 
 .four{
-  transform: scale(0.15) translateX(70%);
+  transform: scale(0.15) translateX(90%);
   opacity: .5;
   filter: blur(5px);
+}
+.five{
+  transform: scale(0.1) translateX(0%);
+  opacity: .25;
+  filter: blur(10px);
 }
 
 

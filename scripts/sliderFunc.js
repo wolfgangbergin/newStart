@@ -58,6 +58,7 @@ const sliderFunc = function () {
     tempWolf1[2].className = 'slide two';
     tempWolf1[3].className = 'slide three';
     tempWolf1[4].className = 'slide four';
+    tempWolf1[5].className = 'slide five';
   };
 
   // /////////////////////////////////////////////////////////////////////////////////////////
