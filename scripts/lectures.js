@@ -25,7 +25,7 @@ import { script2 } from './script2.js';
 //     e.returnValue = '';
    
 // });
-l('wolfMan')
+// l('wolfMan')
 // /////////////////////////////////////////////////////////////////////////////////////////
 const lectures = 'lectures';
 
