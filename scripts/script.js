@@ -5,7 +5,7 @@
 
 
 import { script2 } from "./script2.js";
-//import { lectures } from "./lectures.js";
+import { lectures } from "./lectures.js";
 import { sliderFunc } from "./sliderFunc.js";
 
 
@@ -51,3 +51,4 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+

@@ -3,25 +3,25 @@
 const sliderFunc = function () {
   // /////////////////////////////////////////////////////////////////////////////////////////
 
-  const kimSlideFive = document.createElement('div');
-  kimSlideFive.className = 'slide four';
-  kimSlideFive.innerHTML = ` <div class="testimonial">
-<h5 class="testimonial__header">
-  kim!!!
-</h5>
-<blockquote class="testimonial__text">
-  kim!!! lorm ipsum dolor sit, amet consectetur adipisicing elit.
+//   const kimSlideFive = document.createElement('div');
+//   kimSlideFive.className = 'slide four';
+//   kimSlideFive.innerHTML = ` <div class="testimonial">
+// <h5 class="testimonial__header">
+//   kim!!!
+// </h5>
+// <blockquote class="testimonial__text">
+//   kim!!! lorm ipsum dolor sit, amet consectetur adipisicing elit.
   
-</blockquote>
-<address class="testimonial__author">
-  <img src="img/img-4.jpg" alt="" class="testimonial__photo" />
-  <h6 class="testimonial__name">Francisco Gomes</h6>
-  <p class="testimonial__location">Lisbon, Portugal</p>
-</address>
-</div>`;
+// </blockquote>
+// <address class="testimonial__author">
+//   <img src="img/img-4.jpg" alt="" class="testimonial__photo" />
+//   <h6 class="testimonial__name">Francisco Gomes</h6>
+//   <p class="testimonial__location">Lisbon, Portugal</p>
+// </address>
+// </div>`;
 
   // /////////////////////////////////////////////////////////////////////////////////////////
-  document.querySelector('#section--3').scrollIntoView();
+  //document.querySelector('#section--3').scrollIntoView();
 
   /////////////////////////////////////////////////////////////////////////////////////////
   const dotsContainer = document.querySelector('.dots');
